@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.flex {
+  width: clamp(90%, 100%, 1280px);
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    color: #91f;
+  }
+}
+.hr {
+  margin: 0 auto;
+}
+.ul-flex {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+.text {
+  text-align: center;
+  margin: 40px 0;
+  color: #f03;
+}
