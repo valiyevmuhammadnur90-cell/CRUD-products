@@ -4,9 +4,11 @@ import { Button } from "antd";
 import { message } from "antd";
 import AddProduct from "./components/AddProduct";
 import EditProduct from "./components/EditProduct";
+import { useEffect, useState } from "react";
 
 function App() {
   const queryClient = useQueryClient();
+  const [index, setIndex] = useState(0);
   const {
     data: products,
     isLoading,
@@ -19,15 +21,25 @@ function App() {
     mutationFn: deleteProduct,
     onSuccess: () => {
       queryClient.invalidateQueries(["products"]);
-      message.warning("Product deleted. You can't return it!");
+      message.warning("Product deleted. You can't restore it!");
     },
   });
 
+  useEffect(() => {
+    const dots = 5;
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % dots);
+    }, 250);
+
+    return () => clearInterval(timer);
+  }, []);
+
   if (isLoading)
     return (
-      <div>
-        <div className="stick-1"></div>
-        <div className="stick-2"></div>
+      <div className="loader">
+        {[...Array(5)].map((_, i) => (
+          <span key={i} className={`dot ${i === index ? "active" : ""}`}></span>
+        ))}
       </div>
     );
   if (error) return <h1 className="error-title">Please connect to API!</h1>;
