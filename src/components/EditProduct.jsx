@@ -57,7 +57,7 @@ const EditProduct = ({ id }) => {
           <Form.Item
             label="Product name"
             name="name"
-            rules={[{ required: true, message: "Fill this line!" }]}
+            rules={[{ required: true, message: "Fill the line!" }]}
           >
             <Input />
           </Form.Item>
@@ -65,7 +65,7 @@ const EditProduct = ({ id }) => {
           <Form.Item
             label="Image (url)"
             name="img"
-            rules={[{ required: true, message: "Fill this line!" }]}
+            rules={[{ required: true, message: "Fill the line!" }]}
           >
             <Input />
           </Form.Item>
@@ -73,7 +73,7 @@ const EditProduct = ({ id }) => {
           <Form.Item
             label="Price ($)"
             name="price"
-            rules={[{ required: true, message: "Fill this line!" }]}
+            rules={[{ required: true, message: "Fill the line!" }]}
           >
             <Input />
           </Form.Item>

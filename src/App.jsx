@@ -42,7 +42,8 @@ function App() {
         ))}
       </div>
     );
-  if (error) return <h1 className="error-title">Please connect to API!</h1>;
+  if (error)
+    return <h1 className="error-title">Check your internet connection!</h1>;
 
   return (
     <div>
